@@ -35,6 +35,12 @@ def is_straight(hand):
             return False
     return True
 
+def is_straight_flush(hand):
+    if is_flush(hand) and is_straight(hand):
+        return True
+    else:
+        return False
+
 while True:
     hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
     if hand_type not in ['flush', 'full house', 'three of a kind', 'royal flush']:
