@@ -54,6 +54,14 @@ def is_four_of_a_kind(hand):
         return True
     else:
         return False
+    
+def is_royal_flush(hand):
+    values = [card[1] for card in hand]
+    if len(set(values)) == 5 and set(values) == set(['Ace', 'King', 'Queen', 'Jack', '10']):
+        return True
+    else:
+        return False
+
 
 while True:
     hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
