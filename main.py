@@ -24,6 +24,16 @@ def is_three_of_a_kind(hand):
         return True
     else:
         return False
+    
+def is_straight(hand):
+    values = [card[1] for card in hand]
+    values.sort(key=lambda x: ranks.index(x))
+    if values == ['Ace', '10', 'Jack', 'King', 'Queen']:
+        return True
+    for i in range(len(values)-1):
+        if ranks.index(values[i+1]) - ranks.index(values[i]) != 1:
+            return False
+    return True
 
 while True:
     hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
