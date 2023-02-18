@@ -5,11 +5,17 @@ from suits import is_flush, is_full_house, is_three_of_a_kind, is_straight, is_s
 suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
 ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
 
-deck = [(suit, rank) for suit in suits for rank in ranks]
+def create_deck():
+    suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+    ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+    deck = [(suit, rank) for suit in suits for rank in ranks]
+    return deck
+
 
 def calculate_probability(hand_type, num_simulations, suits, ranks):
     hand_count = 0
     for i in range(num_simulations):
+        deck = create_deck()
         random.shuffle(deck)
         hand = deck[:5]
         if hand_type == 'flush' and is_flush(hand, suits):

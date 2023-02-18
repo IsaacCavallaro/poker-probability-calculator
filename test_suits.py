@@ -1,6 +1,6 @@
 import random
 from suits import is_flush, is_full_house, is_three_of_a_kind, is_straight, is_straight_flush, is_two_pairs, is_four_of_a_kind, is_royal_flush
-from main import calculate_probability
+from main import calculate_probability, create_deck
 
 
 suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -60,6 +60,13 @@ def test_calculate_probability():
     # Test with a royal flush hand type and 500 simulations
     result = calculate_probability('royal flush', 500, suits, ranks)
     assert 0 <= result <= 1
+
+def test_create_deck():
+    deck = create_deck()
+    assert len(deck) == 52, "Deck does not contain 52 cards"
+    for suit in ['Hearts', 'Diamonds', 'Clubs', 'Spades']:
+        for rank in ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']:
+            assert (suit, rank) in deck, f"Card {rank} of {suit} not found in deck"
 
 
 
