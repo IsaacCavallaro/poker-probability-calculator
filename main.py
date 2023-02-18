@@ -85,7 +85,8 @@ def calculate_probability(hand_type, num_simulations):
             hand_count += 1
 
     probability = hand_count / num_simulations
-    return probability
+    print(probability)
+
 
 
 while True:
@@ -102,3 +103,4 @@ while True:
     except ValueError:
         print('Invalid input. Please enter an integer.')
 
+calculate_probability(hand_type, num_simulations)
