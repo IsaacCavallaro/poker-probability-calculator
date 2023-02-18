@@ -17,6 +17,13 @@ def is_full_house(hand):
         return True
     else:
         return False
+    
+def is_three_of_a_kind(hand):
+    values = [card[1] for card in hand]
+    if len(set(values)) == 3 and max([values.count(value) for value in set(values)]) == 3:
+        return True
+    else:
+        return False
 
 while True:
     hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
