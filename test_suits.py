@@ -24,6 +24,7 @@ def test_is_three_of_a_kind():
 
 def test_is_straight():
     hand = [('Hearts', 'Ace'), ('Diamonds', '10'), ('Clubs', 'Jack'), ('Hearts', 'Queen'), ('Diamonds', 'King')]
+    ranks = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
     assert is_straight(hand, ranks) == True
 
 

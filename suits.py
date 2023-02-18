@@ -21,13 +21,15 @@ def is_three_of_a_kind(hand, ranks):
     
 def is_straight(hand, ranks):
     values = [card[1] for card in hand]
-    values.sort(key=lambda x: ranks.index(x))
-    if values == ['Ace', '10', 'Jack', 'King', 'Queen']:
+    ranks_values = [ranks.index(value) for value in values]
+    sorted_ranks_values = sorted(ranks_values)
+    
+    if sorted_ranks_values == [0, 9, 10, 11, 12]:
+        # Special case for Ace-10 straight
         return True
-    for i in range(len(values)-1):
-        if ranks.index(values[i+1]) - ranks.index(values[i]) != 1:
-            return False
-    return True
+    
+    return sorted_ranks_values == list(range(sorted_ranks_values[0], sorted_ranks_values[-1] + 1))
+
 
 def is_straight_flush(hand, suits, ranks):
     if is_flush(hand, suits) and is_straight(hand, ranks):

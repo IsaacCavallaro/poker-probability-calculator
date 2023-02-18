@@ -3,7 +3,8 @@ from suits import is_flush, is_full_house, is_three_of_a_kind, is_straight, is_s
 
 
 suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
-ranks = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
+ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+
 deck = [(suit, rank) for suit in suits for rank in ranks]
 
 def calculate_probability(hand_type, num_simulations):
