@@ -47,6 +47,13 @@ def is_two_pairs(hand):
         return True
     else:
         return False
+    
+def is_four_of_a_kind(hand):
+    values = [card[1] for card in hand]
+    if len(set(values)) == 2 and max([values.count(value) for value in set(values)]) == 4:
+        return True
+    else:
+        return False
 
 while True:
     hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
