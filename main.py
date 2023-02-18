@@ -7,7 +7,7 @@ ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 
 
 deck = [(suit, rank) for suit in suits for rank in ranks]
 
-def calculate_probability(hand_type, num_simulations):
+def calculate_probability(hand_type, num_simulations, suits, ranks):
     hand_count = 0
     for i in range(num_simulations):
         random.shuffle(deck)
@@ -18,7 +18,7 @@ def calculate_probability(hand_type, num_simulations):
             hand_count += 1
         elif hand_type == 'three of a kind' and is_three_of_a_kind(hand, suits):
             hand_count += 1
-        elif hand_type == 'royal flush' and is_royal_flush(hand, suits):
+        elif hand_type == 'royal flush' and is_royal_flush(hand, suits, ranks):
             hand_count += 1
         elif hand_type == 'straight' and is_straight(hand, suits):
             hand_count += 1
@@ -31,6 +31,7 @@ def calculate_probability(hand_type, num_simulations):
 
     probability = hand_count / num_simulations
     print(f'The probability of getting a {hand_type} is {probability:.4f}.')
+    return probability
 
 while True:
     hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
@@ -46,4 +47,4 @@ while True:
     except ValueError:
         print('Invalid input. Please enter an integer.')
 
-calculate_probability(hand_type, num_simulations)
+calculate_probability(hand_type, num_simulations, suits, ranks)

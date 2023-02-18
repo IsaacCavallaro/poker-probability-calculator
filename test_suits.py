@@ -1,5 +1,6 @@
 import random
 from suits import is_flush, is_full_house, is_three_of_a_kind, is_straight, is_straight_flush, is_two_pairs, is_four_of_a_kind, is_royal_flush
+from main import calculate_probability
 
 
 suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -46,4 +47,20 @@ def test_is_four_of_a_kind():
 def test_is_royal_flush():
     hand = [('Hearts', 'Ace'), ('Hearts', 'King'), ('Hearts', 'Queen'), ('Hearts', 'Jack'), ('Hearts', '10')]
     assert is_royal_flush(hand, suits, ranks) == True
+
+def test_calculate_probability():
+    # Define the suits and ranks variables
+    suits = ['hearts', 'diamonds', 'clubs', 'spades']
+    ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+
+    # Test with a flush hand type and 1000 simulations
+    result = calculate_probability('flush', 1000, suits, ranks)
+    assert 0 <= result <= 1
+
+    # Test with a royal flush hand type and 500 simulations
+    result = calculate_probability('royal flush', 500, suits, ranks)
+    assert 0 <= result <= 1
+
+
+
 
