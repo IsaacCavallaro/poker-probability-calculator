@@ -10,6 +10,13 @@ def is_flush(hand):
         return True
     else:
         return False
+    
+def is_full_house(hand):
+    values = [card[1] for card in hand]
+    if len(set(values)) == 2 and values.count(values[0]) in [2, 3]:
+        return True
+    else:
+        return False
 
 while True:
     hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
