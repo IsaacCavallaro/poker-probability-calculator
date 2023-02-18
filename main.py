@@ -62,6 +62,31 @@ def is_royal_flush(hand):
     else:
         return False
 
+def calculate_probability(hand_type, num_simulations):
+    hand_count = 0
+    for i in range(num_simulations):
+        random.shuffle(deck)
+        hand = deck[:5]
+        if hand_type == 'flush' and is_flush(hand):
+            hand_count += 1
+        elif hand_type == 'full house' and is_full_house(hand):
+            hand_count += 1
+        elif hand_type == 'three of a kind' and is_three_of_a_kind(hand):
+            hand_count += 1
+        elif hand_type == 'royal flush' and is_royal_flush(hand):
+            hand_count += 1
+        elif hand_type == 'straight' and is_straight(hand):
+            hand_count += 1
+        elif hand_type == 'straight flush' and is_straight_flush(hand):
+            hand_count += 1
+        elif hand_type == 'two pairs' and is_two_pairs(hand):
+            hand_count += 1
+        elif hand_type == 'four of a kind' and is_four_of_a_kind(hand):
+            hand_count += 1
+
+    probability = hand_count / num_simulations
+    return probability
+
 
 while True:
     hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
