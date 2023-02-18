@@ -38,3 +38,10 @@ python poker_probability_calculator.py
 
 4. The script will output the probability of getting the specified hand after the given number of simulations.
 
+
+## Running the Tests
+
+To run the tests for this project, navigate to the project directory in your terminal and run the following command:
+```bash
+pytest -s test_suits.py                   
+```
