@@ -2,7 +2,6 @@ import random
 from suits import is_flush, is_full_house, is_three_of_a_kind, is_straight, is_straight_flush, is_two_pairs, is_four_of_a_kind, is_royal_flush
 
 def main():
-
     suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
     ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
 
@@ -36,8 +35,9 @@ def main():
                 hand_count += 1
 
         probability = hand_count / num_simulations
-        print(f'The probability of getting a {hand_type} is {probability:.4f}.')
+        print(f'After simulating {num_simulations:,} hands, the probability of getting a {hand_type} is {probability:.2%}.')
         return probability
+
 
     while True:
         hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
