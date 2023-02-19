@@ -9,7 +9,7 @@ def create_deck(suits, ranks):
 def calculate_probability(hand_type, num_simulations, suits, ranks):
     hand_count = 0
     for i in range(num_simulations):
-        deck = create_deck(suits, ranks)  # pass suits and ranks as arguments
+        deck = create_deck(suits, ranks)
         random.shuffle(deck)
         hand = deck[:5]
         if hand_type == 'flush' and is_flush(hand, suits):
@@ -20,9 +20,9 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
             hand_count += 1
         elif hand_type == 'royal flush' and is_royal_flush(hand, suits, ranks):
             hand_count += 1
-        elif hand_type == 'straight' and is_straight(hand, suits):
+        elif hand_type == 'straight' and is_straight(hand, ranks):
             hand_count += 1
-        elif hand_type == 'straight flush' and is_straight_flush(hand, suits):
+        elif hand_type == 'straight flush' and is_straight_flush(hand, suits, ranks):
             hand_count += 1
         elif hand_type == 'two pairs' and is_two_pairs(hand, suits):
             hand_count += 1
@@ -34,16 +34,24 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
     return probability
 
 
+
 def main():
     suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
     ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
 
+    hand_types = ['flush', 'full house', 'three of a kind', 'straight','straight flush', 'two pairs', 'four of a kind', 'royal flush']
+
+    print('Select a hand type:')
+    for i, hand_type in enumerate(hand_types):
+        print(f'{i+1}. {hand_type}')
+
     while True:
-        hand_type = input('Enter the hand type (flush, full house, three of a kind, royal flush): ')
-        if hand_type not in ['flush', 'full house', 'three of a kind', 'royal flush']:
-            print('Invalid input. Please try again.')
-        else:
+        try:
+            choice = int(input('Enter the number of your choice: '))
+            hand_type = hand_types[choice-1]
             break
+        except (ValueError, IndexError):
+            print('Invalid input. Please try again.')
 
     while True:
         try:
@@ -53,6 +61,7 @@ def main():
             print('Invalid input. Please enter an integer.')
 
     calculate_probability(hand_type, num_simulations, suits, ranks)
+
 
 if __name__ == "__main__":
     main()

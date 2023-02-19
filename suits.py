@@ -32,10 +32,8 @@ def is_straight(hand, ranks):
 
 
 def is_straight_flush(hand, suits, ranks):
-    if is_flush(hand, suits) and is_straight(hand, ranks):
-        return True
-    else:
-        return False
+    return is_straight(hand, ranks) and is_flush(hand, suits)
+
     
 def is_two_pairs(hand, ranks):
     values = [card[1] for card in hand]
