@@ -5,7 +5,6 @@ def create_deck(suits, ranks):
     deck = [(suit, rank) for suit in suits for rank in ranks]
     return deck
 
-
 def calculate_probability(hand_type, num_simulations, suits, ranks):
     hand_count = 0
     for i in range(num_simulations):
@@ -29,11 +28,15 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
         elif hand_type == 'four of a kind' and is_four_of_a_kind(hand, suits):
             hand_count += 1
 
-    probability = hand_count / num_simulations
-    print(f'After simulating {num_simulations:,} hands, the probability of getting a {hand_type} is {probability:.2%}.')
+    if hand_count == 0:
+        probability = 0
+        expected_frequency = float('inf')
+    else:
+        probability = hand_count / num_simulations
+        expected_frequency = int(1 / probability)
+
+    print(f'After simulating {num_simulations:,} hands, the probability of getting a {hand_type} is {probability:.2%}, which means that out of every {expected_frequency:,} hands played, you can expect to get a {hand_type} about {num_simulations // expected_frequency:,} times.')
     return probability
-
-
 
 def main():
     suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -61,7 +64,6 @@ def main():
             print('Invalid input. Please enter an integer.')
 
     calculate_probability(hand_type, num_simulations, suits, ranks)
-
 
 if __name__ == "__main__":
     main()
