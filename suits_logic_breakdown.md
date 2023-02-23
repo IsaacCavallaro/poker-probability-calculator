@@ -18,7 +18,7 @@ This function takes:
 
 ---
 
-## `is_full_house(hand, ranks)`
+## `is_full_house(hand)`
 
 ```python
 def is_full_house(hand):
@@ -29,8 +29,6 @@ def is_full_house(hand):
 This function takes:
  - hand 
     - list of five cards, where each card is a tuple 
-- ranks 
-    - list of all possible ranks, in the order they are ranked
 
 -  It creates a new list `values` containing the second element (the rank) of each card in the hand
 - If there are only two unique ranks in the hand (i.e., if the length of the set of values is 2), and one of those ranks appears either two or three times in the hand (i.e., if the count of the first rank in values is either 2 or 3), then the function returns True, indicating that the hand is a full house
@@ -38,7 +36,7 @@ This function takes:
 
 ---
 
-## `is_three_of_a_kind(hand, ranks)`
+## `is_three_of_a_kind(hand)`
 
 ```python
 def is_three_of_a_kind(hand):
@@ -49,20 +47,15 @@ def is_three_of_a_kind(hand):
 This function takes:
  - hand 
     - list of five cards, where each card is a tuple 
-- ranks 
-    - list of all possible ranks, in the order they are ranked
 
 - It creates a new list `values` containing the second element (the rank) of each card in the hand
 - If there are exactly three unique ranks in the hand (i.e., if the length of the set of values is 3), and the maximum count of any rank in the hand is 3 (i.e., if the maximum value of the list [values.count(value) for value in set(values)] is 3), then the function returns True, indicating that the hand is three of a kind
 - Otherwise, the function returns False.
 
+---
+
 ## `is_straight(hand, ranks)`
 
-This function takes:
- - hand 
-    - list of five cards, where each card is a tuple
-- ranks 
-    - list of all possible ranks, in the order they are ranked
 
 
 ```python
@@ -117,6 +110,8 @@ This function takes:
 - If both functions return True, then the hand is a straight flush and the function returns True
 - Otherwise, it returns False.
 
+---
+
 ## `is_two_pairs`
 
 ```python
@@ -128,8 +123,6 @@ def is_two_pairs(hand):
 This function takes:
  - hand 
     - list of five cards, where each card is a tuple 
-- ranks 
-    - list of all possible ranks, in the order they are ranked
 
 - This function first extracts the values of each card in the hand and saves to `values`
 - If there are exactly 3 distinct values (meaning 2 pairs and 1 card)
@@ -140,7 +133,7 @@ This function takes:
 
 ---
 
-## is_four_of_a_kind(hand, ranks)
+## `is_four_of_a_kind(hand)`
 
 ```python
 def is_four_of_a_kind(hand):
@@ -151,8 +144,6 @@ def is_four_of_a_kind(hand):
 This function takes:
  - hand 
     - list of five cards, where each card is a tuple 
-- ranks 
-    - list of all possible ranks, in the order they are ranked
 
 - This function first extracts the values of each card in the hand and saves to `values`
 - If there are exactly 2 distinct values (meaning 4 cards of one value and 1 card of another value).
@@ -173,10 +164,7 @@ def is_royal_flush(hand):
 This function takes:
  - hand 
     - list of five cards, where each card is a tuple 
-- suits
-    - list of all possible suits
-- ranks 
-    - list of all possible ranks, in the order they are ranked
+
 
 - This function first extracts the values of each card in the hand and saves to `values`
 - If there are exactly 5 distinct values (meaning all cards are different ranks)
