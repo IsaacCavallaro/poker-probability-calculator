@@ -1,3 +1,0 @@
-[MASTER]
-# Run pylint on all Python files in the project directory
-files-output=yes

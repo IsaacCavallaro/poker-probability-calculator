@@ -1,5 +1,4 @@
-# pylint: disable=missing-module-docstring,missing-function-docstring
-import random
+# pylint: disable=missing-module-docstring,missing-function-docstring, redefined-outer-name, too-many-function-args,singleton-comparison, duplicate-code
 from suits import (
     is_flush,
     is_full_house,

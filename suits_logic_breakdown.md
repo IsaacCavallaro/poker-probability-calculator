@@ -5,10 +5,7 @@
 ```python
 def is_flush(hand):
     suits_in_hand = [card[0] for card in hand]
-    if len(set(suits_in_hand)) == 1:
-        return True
-    else:
-        return False
+    return len(set(suits_in_hand)) == 1
 ```
 
 This function takes:
@@ -24,12 +21,9 @@ This function takes:
 ## `is_full_house(hand, ranks)`
 
 ```python
-def is_full_house(hand, ranks):
+def is_full_house(hand):
     values = [card[1] for card in hand]
-    if len(set(values)) == 2 and values.count(values[0]) in [2, 3]:
-        return True
-    else:
-        return False
+    return len(set(values)) == 2 and values.count(values[0]) in [2, 3]
 ```
 
 This function takes:
@@ -47,12 +41,9 @@ This function takes:
 ## `is_three_of_a_kind(hand, ranks)`
 
 ```python
-def is_three_of_a_kind(hand, ranks):
+def is_three_of_a_kind(hand):
     values = [card[1] for card in hand]
-    if len(set(values)) == 3 and max([values.count(value) for value in set(values)]) == 3:
-        return True
-    else:
-        return False
+    return len(set(values)) == 3 and max([values.count(value) for value in set(values)]) == 3
 ```
 
 This function takes:
@@ -129,12 +120,9 @@ This function takes:
 ## `is_two_pairs`
 
 ```python
-def is_two_pairs(hand, ranks):
+def is_two_pairs(hand):
     values = [card[1] for card in hand]
-    if len(set(values)) == 3 and max([values.count(value) for value in set(values)]) == 2:
-        return True
-    else:
-        return False
+    return len(set(values)) == 3 and max([values.count(value) for value in set(values)]) == 2
 ```
 
 This function takes:
@@ -155,12 +143,9 @@ This function takes:
 ## is_four_of_a_kind(hand, ranks)
 
 ```python
-def is_four_of_a_kind(hand, ranks):
+def is_four_of_a_kind(hand):
     values = [card[1] for card in hand]
-    if len(set(values)) == 2 and max([values.count(value) for value in set(values)]) == 4:
-        return True
-    else:
-        return False
+    return len(set(values)) == 2 and max([values.count(value) for value in set(values)]) == 4
 ```
 
 This function takes:
@@ -180,12 +165,9 @@ This function takes:
 
 ## is_royal_flush(hand, suits, ranks)
 ```python
-def is_royal_flush(hand, suits, ranks):
+def is_royal_flush(hand):
     values = [card[1] for card in hand]
-    if len(set(values)) == 5 and set(values) == set(['Ace', 'King', 'Queen', 'Jack', '10']):
-        return True
-    else:
-        return False
+    return set(values) == set(["Ace", "King", "Queen", "Jack", "10"])
 ```
 
 This function takes:
