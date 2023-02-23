@@ -1,9 +1,9 @@
 # Suits Logic Breakdown
 
-## `is_flush(hand, suits)`
+## `is_flush(hand)`
 
 ```python
-def is_flush(hand, suits):
+def is_flush(hand):
     suits_in_hand = [card[0] for card in hand]
     if len(set(suits_in_hand)) == 1:
         return True
@@ -14,9 +14,6 @@ def is_flush(hand, suits):
 This function takes:
  - hand 
     - list of five cards, where each card is a tuple 
-- suits 
-    - list of all possible suits
-
 
 - It creates a new list `suits_in_hand` containing the first element (the suit) of each card in the hand
 - If there is only one unique suit in the hand (i.e., if the length of the set of `suits_in_hand` is 1), then the function returns True, indicating that the hand is a flush 

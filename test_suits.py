@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring,missing-function-docstring
 import random
 from suits import (
     is_flush,
@@ -39,7 +40,7 @@ def test_is_flush():
         ("Hearts", "10"),
         ("Hearts", "King"),
     ]
-    assert is_flush(hand, suits) == True
+    assert is_flush(hand) == True
 
 
 def test_is_full_house():
@@ -131,7 +132,7 @@ def test_is_royal_flush():
         ("Hearts", "Jack"),
         ("Hearts", "10"),
     ]
-    assert is_royal_flush(hand, suits, ranks) == True
+    assert is_royal_flush(hand) == True
 
 
 def test_calculate_probability():

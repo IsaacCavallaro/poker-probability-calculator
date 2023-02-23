@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring,missing-function-docstring
 import random
 from suits import (
     is_flush,
@@ -17,6 +18,7 @@ def create_deck(suits, ranks):
 
 
 def calculate_probability(hand_type, num_simulations, suits, ranks):
+    # pylint: disable=unused-variable
     hand_count = 0
     for i in range(num_simulations):
         deck = create_deck(suits, ranks)
@@ -51,10 +53,13 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
         expected_frequency = int(1 / probability)
 
     print(
-        f"After simulating {num_simulations:,} hands, the probability of getting a {hand_type} is {probability:.2%}, which means that out of every {expected_frequency:,} hands played, you can expect to get a {hand_type} about {num_simulations // expected_frequency:,} times."
+        f"After simulating {num_simulations:,} hands," 
+        f"the probability of getting a {hand_type} is {probability:.2%}, "
+        f"which means that out of every {expected_frequency:,} hands played, "
+        f"you can expect to get a {hand_type} about"
+        f"{num_simulations // expected_frequency:,} times."
     )
     return probability
-
 
 def main():
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]

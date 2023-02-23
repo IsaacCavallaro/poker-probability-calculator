@@ -1,9 +1,7 @@
-def is_flush(hand, suits):
+# pylint: disable=missing-module-docstring,missing-function-docstring
+def is_flush(hand):
     suits_in_hand = [card[0] for card in hand]
-    if len(set(suits_in_hand)) == 1:
-        return True
-    else:
-        return False
+    return len(set(suits_in_hand)) == 1
 
 
 def is_full_house(hand, ranks):
@@ -65,11 +63,6 @@ def is_four_of_a_kind(hand, ranks):
         return False
 
 
-def is_royal_flush(hand, suits, ranks):
+def is_royal_flush(hand):
     values = [card[1] for card in hand]
-    if len(set(values)) == 5 and set(values) == set(
-        ["Ace", "King", "Queen", "Jack", "10"]
-    ):
-        return True
-    else:
-        return False
+    return set(values) == set(["Ace", "King", "Queen", "Jack", "10"])
