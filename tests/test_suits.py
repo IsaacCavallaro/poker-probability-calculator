@@ -1,5 +1,5 @@
 # pylint: disable=missing-module-docstring,missing-function-docstring, redefined-outer-name, too-many-function-args,singleton-comparison, duplicate-code
-from src.suits import (
+from ..src.suits import (
     is_flush,
     is_full_house,
     is_three_of_a_kind,
@@ -9,7 +9,7 @@ from src.suits import (
     is_four_of_a_kind,
     is_royal_flush,
 )
-from src.main import calculate_probability, create_deck
+from ..src.main import calculate_probability, create_deck
 
 
 suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
