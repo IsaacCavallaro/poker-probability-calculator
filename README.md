@@ -15,13 +15,13 @@ You will need to have Python installed on your machine.
 1. Clone the repository to your local machine:
 
 ``` bash
-git clone https://github.com/yourusername/poker-probability-calculator.git
+git clone https://github.com/yourusername/poker_probability_calculator.git
 ```
 
 2. Navigate to the project directory:
 
 ``` bash
-cd poker-probability-calculator
+cd poker_probability_calculator
 ```
 
 ## Usage
