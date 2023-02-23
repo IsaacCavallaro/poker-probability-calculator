@@ -174,4 +174,4 @@ This function takes:
         - otherwise it returns False
 
 
-        testing branch protections again and again and again after locking the branch
+        testing branch protections again and again and again after locking the branch. And again
