@@ -54,7 +54,7 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
 
     print(
         f"After simulating {num_simulations:,} hands," 
-        f"the probability of getting a {hand_type} is {probability:.4%}, "
+        f"the probability of getting a {hand_type} was {probability:.4%}, "
         f"which means that out of every {expected_frequency:,} hands played, "
         f"you can expect to get a {hand_type} about "
         f"{num_simulations // expected_frequency:,} times."

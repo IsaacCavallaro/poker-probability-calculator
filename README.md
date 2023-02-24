@@ -29,7 +29,7 @@ cd poker_probability_calculator
 1. Run the script in your terminal using Python:
 
 ``` bash
-python poker_probability_calculator.py
+bin/run_project.sh
 ```
 
 2. Enter the type of hand you want to calculate the probability for when prompted (flush, full house, three of a kind, four of a kind, straight, straight flush, two pairs, royal flush).
@@ -44,4 +44,12 @@ python poker_probability_calculator.py
 To run the tests for this project, navigate to the project directory in your terminal and run the following command:
 ```bash
 pytest -s test_suits.py                   
+```
+
+## Running the Linter
+
+To run the linter for this project, navigate to the project directory in your terminal and run the following command:
+
+```bash
+pylint *.py
 ```
