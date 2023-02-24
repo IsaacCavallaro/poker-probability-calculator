@@ -50,7 +50,7 @@ def test_is_full_house():
         ("Hearts", "King"),
         ("Diamonds", "King"),
     ]
-    assert is_full_house(hand, ranks) == True
+    assert is_full_house(hand) == True
 
 
 def test_is_three_of_a_kind():
@@ -61,7 +61,7 @@ def test_is_three_of_a_kind():
         ("Hearts", "King"),
         ("Diamonds", "10"),
     ]
-    assert is_three_of_a_kind(hand, ranks) == True
+    assert is_three_of_a_kind(hand) == True
 
 
 def test_is_straight():
@@ -98,7 +98,7 @@ def test_is_straight_flush():
         ("Hearts", "4"),
         ("Hearts", "5"),
     ]
-    assert is_straight_flush(hand, suits, ranks) == True
+    assert is_straight_flush(hand, ranks) == True
 
 
 def test_is_two_pairs():
@@ -109,7 +109,7 @@ def test_is_two_pairs():
         ("Hearts", "King"),
         ("Diamonds", "10"),
     ]
-    assert is_two_pairs(hand, ranks) == True
+    assert is_two_pairs(hand) == True
 
 
 def test_is_four_of_a_kind():
@@ -120,7 +120,7 @@ def test_is_four_of_a_kind():
         ("Spades", "Ace"),
         ("Diamonds", "10"),
     ]
-    assert is_four_of_a_kind(hand, ranks) == True
+    assert is_four_of_a_kind(hand) == True
 
 
 def test_is_royal_flush():

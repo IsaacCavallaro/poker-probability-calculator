@@ -26,8 +26,8 @@ def is_straight(hand, ranks):
     )
 
 
-def is_straight_flush(hand, suits, ranks):
-    return is_straight(hand, ranks) and is_flush(hand, suits)
+def is_straight_flush(hand, ranks):
+    return is_straight(hand, ranks) and is_flush(hand)
 
 
 def is_two_pairs(hand):
