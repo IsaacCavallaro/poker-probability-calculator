@@ -24,20 +24,20 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
         deck = create_deck(suits, ranks)
         random.shuffle(deck)
         hand = deck[:5]
-        if hand_type == "flush" and is_flush(hand, suits):
+        if hand_type == "flush" and is_flush(hand):
             hand_count += 1
-        elif hand_type == "full house" and is_full_house(hand, suits):
+        elif hand_type == "full house" and is_full_house(hand):
             hand_count += 1
         elif hand_type == "three of a kind" and is_three_of_a_kind(
-            hand, suits
+            hand
         ):
             hand_count += 1
-        elif hand_type == "royal flush" and is_royal_flush(hand, suits, ranks):
+        elif hand_type == "royal flush" and is_royal_flush(hand):
             hand_count += 1
         elif hand_type == "straight" and is_straight(hand, ranks):
             hand_count += 1
         elif hand_type == "straight flush" and is_straight_flush(
-            hand, suits, ranks
+            hand, ranks
         ):
             hand_count += 1
         elif hand_type == "two pairs" and is_two_pairs(hand, suits):
@@ -56,7 +56,7 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
         f"After simulating {num_simulations:,} hands," 
         f"the probability of getting a {hand_type} is {probability:.2%}, "
         f"which means that out of every {expected_frequency:,} hands played, "
-        f"you can expect to get a {hand_type} about"
+        f"you can expect to get a {hand_type} about "
         f"{num_simulations // expected_frequency:,} times."
     )
     return probability
