@@ -40,9 +40,9 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
             hand, ranks
         ):
             hand_count += 1
-        elif hand_type == "two pairs" and is_two_pairs(hand, suits):
+        elif hand_type == "two pairs" and is_two_pairs(hand):
             hand_count += 1
-        elif hand_type == "four of a kind" and is_four_of_a_kind(hand, suits):
+        elif hand_type == "four of a kind" and is_four_of_a_kind(hand):
             hand_count += 1
 
     if hand_count == 0:
@@ -54,7 +54,7 @@ def calculate_probability(hand_type, num_simulations, suits, ranks):
 
     print(
         f"After simulating {num_simulations:,} hands," 
-        f"the probability of getting a {hand_type} is {probability:.2%}, "
+        f"the probability of getting a {hand_type} is {probability:.4%}, "
         f"which means that out of every {expected_frequency:,} hands played, "
         f"you can expect to get a {hand_type} about "
         f"{num_simulations // expected_frequency:,} times."
